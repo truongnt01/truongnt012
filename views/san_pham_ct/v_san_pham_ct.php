@@ -1,5 +1,5 @@
-<?php foreach ( $san_pham_cts as $key => $value){ ?>
-<div class="trangctsp">
+<?php foreach ($san_pham_cts as $key => $value) { ?>
+    <div class="trangctsp">
         <div class="anhsp">
             <img src="public/images/<?php echo $value->hinh; ?>" alt="" class="ct1">
             <div class="ctsp1">
@@ -10,20 +10,19 @@
             </div>
 
         </div>
-  
+
         <div class="ctsp">
 
             <div class="tenspct"><?php echo $value->ten_hh; ?></div>
             <div class="danhgiact1">
-                <div class="saoct"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <div class="saoct"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
                 <div class="sodanhgiact"> 2 Đánh Giá</div>
                 <div class="soluotban">9 Đã Bán</div>
 
             </div>
             <div class="giatienct">
-                <div class="giagocct">₫ <?php echo number_format( $value->giam_gia) ?></div>
+                <div class="giagocct">₫ <?php echo number_format($value->giam_gia) ?></div>
                 <div class="giabanct">₫<?php echo number_format($value->don_gia) ?></div>
             </div>
             <div class="baohiemct">
@@ -39,9 +38,9 @@
             <div class="soluongct">
                 <div class="soluongct1">Số Lượng</div>
                 <div class="soluongct2">
-                        <button class="trusl"><i class="fa-solid fa-minus"></i></button>
-                        <button class="sosl">1</button>
-                        <button class="trusl"><i class="fa-solid fa-plus"></i></button> 
+                    <button class="trusl"><i class="fa-solid fa-minus"></i></button>
+                    <button class="sosl">1</button>
+                    <button class="trusl"><i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>
             <div class="muact">
@@ -57,21 +56,21 @@
             </div>
 
         </div>
-     
+
     </div>
     <div class="motaspct">
-         
+
         <h2 class="mtct">MÔ TẢ SẢN PHẨM</h2>
-            <div class="mtct1">
-                <div class="mtct2">Mô tả chi tiết:</div>
-                <div class="mtct2"><?php echo $value->mo_ta ?></div>
-            </div>
-    
+        <div class="mtct1">
+            <div class="mtct2">Mô tả chi tiết:</div>
+            <div class="mtct2"><?php echo $value->mo_ta ?></div>
+        </div>
+
     </div>
-    <?php } ?>
-    <div class="binhluansp">
-        <h2 class="blct" >ĐÁNH GIÁ SẢN PHẨM</h2>
-        <?php foreach ( $binh_luans as $key => $value){ ?>
+<?php } ?>
+<div class="binhluansp">
+    <h2 class="blct">ĐÁNH GIÁ SẢN PHẨM</h2>
+    <?php foreach ($binh_luans as $key => $value) { ?>
         <div class="blct1">
             <div class="bltct2"><img src="public/images/<?php echo $value->hinh; ?>" alt="" class="anhblct"></div>
             <div class="bltct3">
@@ -80,13 +79,14 @@
                     <i class="fa-solid fa-star saoblct"></i>
                     <i class="fa-solid fa-star saoblct"></i>
                     <i class="fa-solid fa-star saoblct"></i>
-                    <i class="fa-solid fa-star saoblct"></i></div>
+                    <i class="fa-solid fa-star saoblct"></i>
+                </div>
                 <div class="tgbl">
-                    <span><?php echo $value->ngay_bl; ?></span> | Phân loại hàng: <span>Black</span>
+                    <span><?php echo $value->ngay_bl; ?></span> | Phân loại hàng: <span><?php echo $value->ten_loai; ?></span>
 
                 </div>
                 <div class="ndbl"><?php echo $value->noi_dung; ?>
-                    
+
                 </div>
                 <div class="anhbl">
                     <img src="public/images/<?php echo $value->anhbl; ?>" alt="" class="anhbl4">
@@ -94,11 +94,10 @@
                     <img src="public/images/<?php echo $value->anhbl; ?>" alt="" class="anhbl4">
                     <img src="public/images/<?php echo $value->anhbl; ?>" alt="" class="anhbl4">
                     <img src="public/images/<?php echo $value->anhbl; ?>" alt="" class="anhbl4">
-                    
+
                 </div>
 
             </div>
         </div>
-        <?php } ?>
-    </div>
-   
+    <?php } ?>
+</div>

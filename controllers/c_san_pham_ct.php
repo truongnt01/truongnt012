@@ -7,7 +7,9 @@ class c_san_pham_ct{
         include ("models/m_binh_luan.php");
         $m_binh_luan = new m_binh_luan();
         $binh_luans = $m_binh_luan->doc_binh_luan();
-
+        // include ("models/m_count_bl.php");
+        // $m_count_bl = new m_count_bl();
+        // $count_bls = $m_count_bl->doc_count_bl();
         // mảng dữ liệu hàng hóa 
         // goij ddgd views vaof đây 
         $view = "views/san_pham_ct/v_san_pham_ct.php";

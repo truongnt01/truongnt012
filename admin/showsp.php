@@ -1,0 +1,7 @@
+<?php
+include ("controllers/c_show_sp.php");
+$c_show_sp = new c_show_sp();
+$c_show_sp->index();
+ 
+ 
+// kết nối dự án sử db xshop
