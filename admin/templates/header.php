@@ -11,11 +11,11 @@
           <a href="showloai.php" ><i class="fa-solid fa-sitemap"></i>Loại</a>
         </li>
         <li>
-          <a href="" ><i class="fa-solid fa-clipboard"></i>Bình Luận</a>
+          <a href="showbl.php" ><i class="fa-solid fa-clipboard"></i>Bình Luận</a>
         </li>
 
         <li>
-          <a href="" ><i class="fa-solid fa-users"></i>Khách Hàng</a>
+          <a href="showkh.php" ><i class="fa-solid fa-users"></i>Khách Hàng</a>
         </li>
         <li>
           <a href="../../../daall/index.php" ><i class="fa-solid fa-house"></i>Vào Website</a>
