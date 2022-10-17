@@ -188,7 +188,9 @@ table tr td{
 table tr :nth-child(3) {
   width: 200px;
 }
-
+table tr :nth-child(1) {
+  width: 50px;
+}
 table tr :nth-child(6) {
   width: 150px;
 }
@@ -199,4 +201,51 @@ table tr :nth-child(10) {
 
 table tr :nth-child(12) {
   width: 50px;
+}
+
+/* add sp */
+/* add */
+form {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.addbang {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+
+}
+
+.box {
+  width: 33%;
+}
+
+.box1 {
+  width: 40%;
+}
+
+label {
+  margin: 0px 50px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+input {
+  width: 250px;
+  margin: 10px 50px;
+
+  padding: 10px 12px;
+   
+}
+
+button {
+  padding: 10px 20px;
+  margin: 40px 50px;
+  float: left;
+}
+
+a {
+  text-decoration: none;
 }

@@ -54,7 +54,7 @@
             <td><?php echo $value->ten_hh ?></td>
             <td><?php echo $value->don_gia ?> </td>
             <td><?php echo $value->giam_gia ?></td>
-            <td><img src="./public/images/<?php echo $value->hinh ?>" alt="" width="100px"></td>
+            <td><img src="../../../daall/public/images/<?php echo $value->hinh ?>" alt="" width="100px"></td>
 
             <td><?php echo $value->id_loai ?></td>
             <td><?php echo $value->dac_biet ?></td>
@@ -63,14 +63,15 @@
             <td><?php echo $value->ngay_nhap ?></td>
             <td><?php echo $value->mo_ta ?></td>
             <td>
-              <a href="">Sửa</a>
-              <a href="">xóa</a>
+              <a href="editsp.php?id_hh=<?php echo $value->id_hh ?>">Sửa</a>
+              <a onclick="return confirm('Bạn có muốn xóa ko')" href="xoasp.php?id_hh=<?php echo $value->id_hh ?>">xóa</a>
             </td>
           </tr>
           <?php } ?>
 
         </table>
-        <a href=" "> <button type="submit">Thêm sp </button></a>
+        <a href="addsp.php"> <button type="submit">Thêm sp </button></a>
       </div>
      
     </main>
+    

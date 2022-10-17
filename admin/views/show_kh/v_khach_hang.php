@@ -20,7 +20,7 @@
                     <td><?php echo $value->ho_ten ?></td>
                     <td><?php echo $value->mat_khau ?></td>
                     <td><?php echo $value->email ?></td>
-                    <td><?php echo $value->hinh ?></td>
+                    <td><img src="../../../daall/public/images/<?php echo $value->hinh ?>" alt="" width="50px"></td>
                     <td><?php echo $value->kich_hoat ?></td>
                     <td><?php echo $value->vai_tro ?></td>
                    

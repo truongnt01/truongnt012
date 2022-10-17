@@ -13,7 +13,6 @@
         <li>
           <a href="showbl.php" ><i class="fa-solid fa-clipboard"></i>Bình Luận</a>
         </li>
-
         <li>
           <a href="showkh.php" ><i class="fa-solid fa-users"></i>Khách Hàng</a>
         </li>
@@ -41,9 +40,9 @@
       </div>
 
       <div class="user-wrapper">
-        <img src="/admin/public/images/admin2.jpg" alt="" width="50" height="50">
+        <img src="../../../daall/public/images/admin2.jpg" alt="" width="50" height="50">
         <div>
-          <h4>Dat Nguyen</h4>
+          <h4> Nguyen Loc</h4>
           <small>Super Admin</small>
         </div>
       </div>

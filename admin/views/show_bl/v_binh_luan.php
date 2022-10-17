@@ -21,7 +21,7 @@
                     <td><?php echo $value->id_hh ?></td>
                     <td><?php echo $value->noi_dung ?></td>
                     <td><?php echo $value->ngay_bl ?></td>
-                    <td><?php echo $value->anhbl ?></td>
+                    <td><img src="../../../daall/public/images/<?php echo $value->anhbl ?>" alt="" width="80px"></td>
                     
                    
                     <td>
