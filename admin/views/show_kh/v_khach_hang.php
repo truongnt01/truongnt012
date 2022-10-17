@@ -26,7 +26,7 @@
                    
                     <td>
                         <a href=" ">Sửa</a>
-                        <a href=" ">xóa</a>
+                        <a onclick="return confirm('Bạn có muốn xóa ko')" href="xoakh.php?id_kh=<?php echo $value->id_kh ?>">xóa</a>
                     </td>
                 </tr>
                 <?php }?>
