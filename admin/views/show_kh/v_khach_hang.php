@@ -27,7 +27,7 @@
                     <td><?php echo $value->vai_tro ?></td>
                    
                     <td>
-                        <a class="sx" href=" ">Sửa</a>
+                        <a class="sx" href=" edit_kh.php?id_kh=<?php echo $value->id_kh ?>">Sửa</a>
                         <a class="sx" onclick="return confirm('Bạn có muốn xóa ko')" href="xoakh.php?id_kh=<?php echo $value->id_kh ?>">xóa</a>
                     </td>
                 </tr>

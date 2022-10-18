@@ -11,7 +11,7 @@
 <body>
   <main>
     <div class="register-form-container">
-      <form action="" method="post">
+      <form action="action_register.php" method="post">
         <div class="register-head">
           <div class="register-icon">
             <i class="fa-solid fa-circle-user"></i>
@@ -40,7 +40,13 @@
             <i class="fa-solid fa-lock"></i>
           </div>
         </div>
+        <!-- <?php if(isset($_POST['create'])) { ?>
+          <div style="color: green;">
+            Đăng kí thành công! <a href="login.php">Login ngay?</a>
+          </div>
+          <?php } ?> -->
         <div class="register-foot">
+          <a href="login.php" style="display: block; text-align: right; text-decoration: none; color: #6C5CE7; font-weight: 600; margin-bottom: 10px;">Login now</a>
           <button type="submit" name="create">Create <i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </form>

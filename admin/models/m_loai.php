@@ -25,7 +25,8 @@ public function edit_loai()
 {
   $id_loai = $_POST['id_loai'];
   $ten_loai = $_POST['ten_loai'];
-  $sql=" UPDATE loai set ten_loai = '$ten_loai' where id_loai = $id_loai " ;
+  $sql=" UPDATE loai set ten_loai = '$ten_loai'
+   where id_loai = $id_loai " ;
   $this->setQuery($sql);
   // lấy dữ liệu nhiều dùng 
   return $this->execute();

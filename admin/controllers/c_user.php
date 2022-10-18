@@ -13,10 +13,9 @@ class c_user
         //convert array std obj -> array 
         $data_user = json_decode(json_encode($_SESSION['users']), true);
         //phân quyền user vs admin
-        if($data_user[0]['vai_tro'] == '1'){
+        if ($data_user[0]['vai_tro'] == '1') {
           header('location:showsp.php');
-        }
-        else {
+        } else {
           header("location:../../daall/index.php?Login thành công!");
         }
       } else {
@@ -40,7 +39,21 @@ class c_user
       $_SESSION['users'] = $user;
     }
   }
-  public function add_user() {
-    
+  
+  public function checkRegister()
+  {
+    if (isset($_POST['create'])) {
+      $name = $_POST['name'];
+      $email = $_POST['email'];
+      $username = $_POST['username'];
+      $pass = $_POST['password'];
+      $this->add_user($name, $username, $pass, $email);
+      header("location:login.php?Đăng-kí-thành-công!");
+    }
+  }
+  public function add_user($name, $username, $pass, $email)
+  {
+    $m_user = new m_user();
+    $add_user = $m_user->insert_user($name, $username, $pass, $email);
   }
 }
