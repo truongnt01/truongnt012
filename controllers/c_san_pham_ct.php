@@ -15,7 +15,18 @@ class c_san_pham_ct{
         $view = "views/san_pham_ct/v_san_pham_ct.php";
         include ("templates/layout.php");
     }
+    public function add_binh_luan()
+    {
+        // include ("models/m_binh_luan.php");
+        if (isset($_POST['cmt'])) {
+            $id_kh = $_POST['id_kh'];
+            $id_hh = $_POST['id_hh'];
+            $noi_dung = $_POST['noi_dung'];
 
+            $m_add_bl = new m_binh_luan();
+            $m_add_bl->insert_binh_luan($id_kh, $id_hh, $noi_dung);
+        }
+    }
 
 } 
  

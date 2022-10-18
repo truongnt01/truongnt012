@@ -1,8 +1,6 @@
 <form action="" method="post">
   
 <div class="addbang">
-        <div class="box"> <label for="">Mã loại hàng </label> <br>
-      
             <input type="hidden" name="id_loai" placeholder="Auto number" value="<?= $result_id_loai -> id_loai ?>"   >
             <?php if (isset($errr['id_loai'])) : ?>
                 <div><?= $errr['id_loai'] ?> </div>
@@ -17,5 +15,5 @@
        
         <button type="submit" name="btnluu">sửa</button>
 </form>
-<a href="showloaihang.php"> <button type="submit"> danh sách sp </button> </a>
-<br><br>
+<a href="showloai.php"> <button type="submit"> danh sách sp </button> </a>
+ 

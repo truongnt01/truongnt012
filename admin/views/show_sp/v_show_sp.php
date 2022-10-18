@@ -1,39 +1,39 @@
 <main>
-      <div class="cards">
-        <div class="card-single">
-          <div>
-            <h1>54</h1>
-            <span><i class="fa-solid fa-users"></i>Customer</span>
-          </div>
-        </div>
-
-        <div class="card-single">
-          <div>
-            <h1>79</h1>
-            <span><i class="fa-solid fa-diagram-project"></i>Projects</span>
-          </div>
-        </div>
-
-        <div class="card-single">
-          <div>
-            <h1>124</h1>
-            <span><i class="fa-brands fa-product-hunt"></i>Product</span>
-          </div>
-        </div>
-
-        <div class="card-single">
-          <div>
-            <h1>$6k</h1>
-            <span><i class="fa-solid fa-users"></i>Income</span>
-          </div>
-        </div>
-
+<div class="cards" style="margin-bottom: 25px;">
+    <div class="card-single">
+      <div>
+        <h1><?= count($show_users) ?></h1>
+        <span><i class="fa-solid fa-users"></i>Users</span>
       </div>
+    </div>
+
+    <div class="card-single">
+      <div>
+        <h1><?= count($show_lh) ?></h1>
+        <span><i class="fa-solid fa-diagram-project"></i>Categories</span>
+      </div>
+    </div>
+
+    <div class="card-single">
+      <div>
+        <h1><?= count($show_sps) ?></h1>
+        <span><i class="fa-brands fa-product-hunt"></i>Product</span>
+      </div>
+    </div>
+
+    <div class="card-single">
+      <div>
+        <h1><?= count($show_bl) ?></h1>
+        <span><i class="fa-solid fa-users"></i>Comments</span>
+      </div>
+    </div>
+
+  </div>
  
       <div class="noidung">
-        <table border="1">
+        <table border="1px">
           <tr>
-            <th>Chọn</th>
+        
             <th>Mã hh</th>
             <th>Tên hàng hóa</th>
             <th>Giá bán</th>
@@ -49,7 +49,7 @@
           </tr>
           <?php foreach($show_sps as $key=> $value){ ?>
           <tr>
-            <td> <input type="checkbox"></td>
+           
             <td><?php echo $value->id_hh ?></td>
             <td><?php echo $value->ten_hh ?></td>
             <td><?php echo $value->don_gia ?> </td>
@@ -63,8 +63,8 @@
             <td><?php echo $value->ngay_nhap ?></td>
             <td><?php echo $value->mo_ta ?></td>
             <td>
-              <a href="editsp.php?id_hh=<?php echo $value->id_hh ?>">Sửa</a>
-              <a onclick="return confirm('Bạn có muốn xóa ko')" href="xoasp.php?id_hh=<?php echo $value->id_hh ?>">xóa</a>
+              <a class="sx" href="editsp.php?id_hh=<?php echo $value->id_hh ?>">Sửa</a>
+              <a class="sx" onclick="return confirm('Bạn có muốn xóa ko')" href="xoasp.php?id_hh=<?php echo $value->id_hh ?>">xóa</a>
             </td>
           </tr>
           <?php } ?>

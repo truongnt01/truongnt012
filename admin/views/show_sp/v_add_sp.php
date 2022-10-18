@@ -46,14 +46,18 @@
                 <div style="color:red;padding-left: 50px;font-weight: 600;"><?= $err['da_ban'] ?> </div>
             <?php endif  ?>
         </div>
-        <div class="box"> <label for="">Id loại</label> <input type="text" name="id_loai">
-            <?php if (isset($err['id_loai'])) : ?>
-                <div style="color:red;padding-left: 50px;font-weight: 600;"><?= $err['id_loai'] ?> </div>
-            <?php endif  ?>
-        </div>
+        <div class="box"><label for="">id loại </label> <br>
 
+            <select name="id_loai" id="" style="border:1px solid #000 ; width: 250px; height: 45px; margin-left: 50px;">
+
+                <?php foreach ($m_loais as $key => $value) { ?>
+                    <option value="<?= $value->id_loai ?>">
+                        <?= $value->ten_loai ?></option>
+                <?php } ?>
+            </select>
+        </div>
     </div>
- 
+
 
     <div class="box" style="margin-top: 20px;"> <label for="">Mô tả hàng hóa</label> <br>
         <textarea name="mo_ta" cols="100" rows="10" style="margin-left:50px; margin-top: 10px;padding: 10px;"></textarea>
@@ -61,7 +65,7 @@
 
     <button type="submit" name="btnluu">Thêm mới </button>
 </form>
-<a href="showhanghoa.php"> <button type="submit"> danh sách sp </button> </a>
+<a href="showsp.php"> <button type="submit"> danh sách sp </button> </a>
 <!-- <input type="text" name="id_loai">
         <div class="box"><label for="">id loại </label> <br>
             <select name="id_loai" style="border:1px solid #000 ; width: 250px; height: 45px; margin-left: 50px;">

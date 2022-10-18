@@ -7,7 +7,7 @@
             <div class="spto">Máy tính & Laptop</div>
             <?php foreach  ($loais as $key=> $value){ ?>
             <div class="spcon">
-                <a href=""><i class="fa-solid fa-caret-right"></i>
+            <a href="hhdanhmuc.php?id_loai=<?php echo $value ->id_loai; ?>&ten_loai=<?php echo $value->ten_loai?>"><i class="fa-solid fa-caret-right"></i>
                 <?php echo $value->ten_loai;?> </a>
                
             </div>

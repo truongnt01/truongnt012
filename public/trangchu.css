@@ -154,8 +154,13 @@ main {
     display: block;
     width: 100%;
     color: black;
+    transition: all 0.1s;
 }
-
+.spcon a:hover{
+    color: #d41830;
+    transform: scale(1.05);
+  
+}
 .spto {
     padding: 20px 10px;
 

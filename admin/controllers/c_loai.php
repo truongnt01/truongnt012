@@ -1,5 +1,6 @@
 <?php
-include("models/m_loai.php");
+include ("models/m_show_sp.php");
+include ("models/m_loai.php");
 class c_loai
 {
     public function index()
@@ -15,12 +16,13 @@ class c_loai
         if (isset($_POST['btnluu'])) {
             $id_loai = NULL;
             $ten_loai = $_POST['ten_loai'];
-            $m_loai = new m_loai();
-            $result = $m_loai->add_loai($id_loai, $ten_loai);
+           
             if ($ten_loai == '') {
                 $err['ten_loai'] = "bạn chưa nhập tên";
             }
             if (!$err) {
+                $m_loai = new m_loai();
+                $result = $m_loai->add_loai($id_loai, $ten_loai);
                 $msg = "thêm sp thành công ";
                 header("location:showloai.php?msg=$msg ");
                 exit;

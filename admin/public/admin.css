@@ -8,8 +8,8 @@
 }
 
 :root {
-
-  --main-color: darkgreen;
+ 
+  --main-color: lightslategray;
   --color-dark: #1d2231;
   --text-gray: #8390a2;
 }
@@ -68,13 +68,19 @@
 .main-content {
   margin-left: 260px;
 }
-
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+}
+.log-out-btn a{
+  background-color: #006400;
+  display: block;
+  padding: 5px 10px;
+  margin-left: 10px;
+  color: #fff;
 }
 
 .search-wrapper {
@@ -147,16 +153,17 @@ header {
 
 
 /* css bảng */
+ 
 .noidung table {
-  border: 1px;
+  border: 1px solid #1d2231;
   width: 100%;
-
+  border-collapse: collapse;
 
 }
 
 .noidung table tr th {
 
-  background: lightgreen;
+  background: cadetblue;
   height: 40px;
 }
 
@@ -171,35 +178,38 @@ button {
   margin: 40px 50px;
   float: left;
 }
-
-table tr :nth-child(11) {
+table tr :nth-child(10) {
   width: 400px;
   
 }
  
 table tr td{
  padding: 10px;
+ 
  /* -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   height: 80px; */
   
 }
-
-table tr :nth-child(3) {
-  width: 200px;
-}
-table tr :nth-child(1) {
-  width: 50px;
-}
-table tr :nth-child(6) {
+table tr th{
+  padding: 10px;
+  text-align: center;
+  /* -webkit-box-orient: vertical;
+   -webkit-line-clamp: 4;
+   height: 80px; */
+   
+ }
+ 
+ 
+table tr :nth-child(5) {
   width: 150px;
 }
 
-table tr :nth-child(10) {
+table tr :nth-child(9) {
   width: 120px;
 }
 
-table tr :nth-child(12) {
+table tr :nth-child(11) {
   width: 50px;
 }
 
@@ -244,8 +254,22 @@ button {
   padding: 10px 20px;
   margin: 40px 50px;
   float: left;
+  background:cadetblue ;
+  color: #fff;
 }
 
 a {
   text-decoration: none;
 }
+.sx{
+  float: left;
+  width: 50px;
+  border: 1px solid #1d2231;
+  background: cadetblue;
+  padding: 5px 10px;
+ margin-top: 10px;
+ color: #fff;
+ text-align: center;
+ margin-left: 10px;
+}
+ 

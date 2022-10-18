@@ -6,16 +6,32 @@ class c_show_sp{
         
         $m_show_sp = new m_show_sp();
         $show_sps = $m_show_sp->doc_show_sp();
+
+        include ("models/m_loai.php");
+        $m_show_lh = new m_loai();
+        $show_lh =  $m_show_lh->doc_loai();
+
+        include("models/m_khach_hang.php");
+        $m_show_user = new m_khach_hang();
+        $show_users = $m_show_user->doc_khach_hang();
+
+        include("models/m_binh_luan.php");
+        $m_show_bl = new m_binh_luan();
+        $show_bl = $m_show_bl->doc_binh_luan();
+
         // mảng dữ liệu hàng hóa 
         // goij ddgd views vaof đây 
         $view = "views/show_sp/v_show_sp.php";
         include ("templates/layout.php");
     }
     public function addsp(){  
+        include ("models/m_loai.php");
+        $m_loai = new m_loai();
+        $m_loais = $m_loai->doc_loai();
         $err = [];
     if (isset($_POST['btnluu'])) {
-        
-        $id_hh = $_POST['id_hh'] ;
+       
+        $id_hh = null ;
         $ten_hh = $_POST['ten_hh'];
         $don_gia = $_POST['don_gia'];
         $giam_gia = $_POST['giam_gia'];
@@ -44,6 +60,9 @@ class c_show_sp{
     if ($ten_hh == '') {
         $err['ten_hh'] = "bạn chưa nhập tên";
     }
+    if ($da_ban == '') {
+        $err['da_ban'] = "bạn cần nhập";
+    }
     
     if (!$err) {
         move_uploaded_file($file['tmp_name'], '../../daall/public/images/' . $image);
@@ -61,6 +80,7 @@ class c_show_sp{
     }
 
     public function editsp(){  
+   
         $err = [];
         $id_hh  =$_GET['id_hh'];
         $m_show_sp = new m_show_sp();
