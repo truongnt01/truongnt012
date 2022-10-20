@@ -13,5 +13,5 @@
     </div>
         <button type="submit" name="btnluu">sửa</button>
 </form>
-<a href="showloai.php"> <button type="submit"> danh sách sp </button> </a>
+<a href="showbl.php"> <button type="submit"> danh sách sp </button> </a>
  

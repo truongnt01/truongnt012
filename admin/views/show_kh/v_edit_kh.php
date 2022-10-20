@@ -1,9 +1,9 @@
 <form action="" method="post" enctype="multipart/form-data">
     <div class="addbang">
-        <div class="box"> <label for="">Mã khách hàng</label> <br>
+       
             <input type="hidden" name="id_kh" placeholder="Auto number" value="<?= $result_id_kh->id_kh ?>">
 
-        </div>
+        
         <div class="box"> <label for="">Tên khách hàng</label> <br>
             <input type="text" name="ho_ten" value="<?= $result_id_kh->ho_ten ?>">
             <?php if (isset($err['ho_ten'])) : ?>
@@ -16,7 +16,11 @@
                 <div style="color:red;padding-left: 50px;font-weight: 600;"><?= $err['ten_dang_nhap'] ?> </div>
             <?php endif  ?>
         </div>
-
+        <div class="box"> <label for="">Vai Trò </label> <input type="text" name="vai_tro" value="<?= $result_id_kh->vai_tro ?>">
+            <?php if (isset($err['vai_tro'])) : ?>
+                <div style="color:red;padding-left: 50px;font-weight: 600;"><?= $err['vai_tro'] ?> </div>
+            <?php endif  ?>
+        </div>
     </div>
     <div class="addbang">
         <div class="box">
@@ -39,14 +43,7 @@
         </div>
 
     </div>
-    <div class="addbang">
-
-        <div class="box"> <label for="">Vai Trò </label> <input type="text" name="vai_tro" value="<?= $result_id_kh->vai_tro ?>">
-            <?php if (isset($err['vai_tro'])) : ?>
-                <div style="color:red;padding-left: 50px;font-weight: 600;"><?= $err['vai_tro'] ?> </div>
-            <?php endif  ?>
-        </div>
-    </div>
+ 
     <button type="submit" name="btnluu">sửa user </button>
 </form>
 <a href="showkh.php"> <button type="submit"> danh sách sp </button> </a>

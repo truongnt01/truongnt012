@@ -7,10 +7,12 @@ if (isset($_SESSION['users'])) {
 <header>
     <div class="top">
         <div class="logo"><img src="public/images/logo.png" alt="" class="logo1"></div>
+       
         <div class="timkiem">
-            <input type="search" value="" placeholder="Tìm kiếm ......." class="search" require>
-            <button class="nuttk" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-
+            <form action="../../daall/search.php" method="get">
+                <input type="search" placeholder="Tìm kiếm ......." class="search" required name="data" >
+                <button class="nuttk" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
         </div>
         <div class="login">
             <div class="giohang"><i class="fa-solid fa-cart-shopping"></i><a href=""> Giỏ hàng</a></div>

@@ -1,9 +1,9 @@
 <form action="" method="post" enctype="multipart/form-data">
     <div class="addbang">
-        <div class="box"> <label for="">Mã hàng hóa </label> <br>
+ 
             <input type="hidden" name="id_hh" placeholder="Auto number" value="<?= $result_id_hh->id_hh ?>">
 
-        </div>
+   
         <div class="box"> <label for="">Tên hàng hóa </label> <br>
             <input type="text" name="ten_hh" value="<?= $result_id_hh->ten_hh ?>">
             <?php if (isset($err['ten_hh'])) : ?>
@@ -16,13 +16,17 @@
                 <div style="color:red;padding-left: 50px;font-weight: 600;"><?= $err['don_gia'] ?> </div>
             <?php endif  ?>
         </div>
-
-    </div>
-    <div class="addbang">
         <div class="box">
 
-            <label for="">Giảm giá</label> <br> <input type="text" name="giam_gia" value="<?= $result_id_hh->giam_gia ?>">
+<label for="">Giảm giá</label> <br> <input type="text" name="giam_gia" value="<?= $result_id_hh->giam_gia ?>">
 
+</div>
+    </div>
+    <div class="addbang">
+    <div class="box"> <label for="">Id loại</label> <input type="text" name="id_loai" value="<?= $result_id_hh->id_loai ?>">
+            <?php if (isset($err['id_loai'])) : ?>
+                <div style="color:red;padding-left: 50px;font-weight: 600;"><?= $err['id_loai'] ?> </div>
+            <?php endif  ?>
         </div>
         <div class="box">
 
@@ -52,11 +56,7 @@
                 <div style="color:red;padding-left: 50px;font-weight: 600;"><?= $err['da_ban'] ?> </div>
             <?php endif  ?>
         </div>
-        <div class="box"> <label for="">Id loại</label> <input type="text" name="id_loai" value="<?= $result_id_hh->id_loai ?>">
-            <?php if (isset($err['id_loai'])) : ?>
-                <div style="color:red;padding-left: 50px;font-weight: 600;"><?= $err['id_loai'] ?> </div>
-            <?php endif  ?>
-        </div>
+     
     
         </div>
 
