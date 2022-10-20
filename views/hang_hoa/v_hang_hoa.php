@@ -18,13 +18,13 @@
             <div class="sanpham">
             <?php foreach( $hang_hoas as $key=>$value ) {?>
         
-              <a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>">  <div class="sanphamct">
+              <a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai?>">  <div class="sanphamct">
                     <img src="public/images/<?php echo $value->hinh;?>" alt="" class="anhsanpham">
-                    <div class="tensp"><a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>"><?php echo $value->ten_hh;?></a></div>
+                    <div class="tensp"><a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai?>"><?php echo $value->ten_hh;?></a></div>
                     <div class="giatien">₫<?php echo number_format($value->don_gia)?></div> 
                     <!-- number_format phẩy sau 3 số , -->
                     <div class="luotxem"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> Đã bán <?php echo $value->da_ban;?>k</div>
-                    <div class="chitietsp"><a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>">Xem chi tiết</a></div>
+                    <div class="chitietsp"><a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai?>">Xem chi tiết</a></div>
                 </div></a>        
             
             <?php }?>

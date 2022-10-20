@@ -10,6 +10,11 @@ class m_san_pham_ct extends database{
         // lấy dữ liệu nhiều dùng 
         return $this -> loadAllRows();
      }
-   
+     public function load_sp_cung_loai(){
+      $id_loai = $_GET['id_loai'];
+      $sql = "select * from hang_hoa where id_loai = $id_loai";
+      $this->setQuery($sql);
+      return $this->loadAllRows();
+   }
 }
  

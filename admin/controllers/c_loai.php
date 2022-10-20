@@ -17,8 +17,11 @@ class c_loai
             $id_loai = NULL;
             $ten_loai = $_POST['ten_loai'];
            
-            if ($ten_loai == '') {
+            if ($ten_loai == '' ) {
                 $err['ten_loai'] = "bạn chưa nhập tên";
+            }
+            if ($ten_loai = 'ten_loai' ) {
+                $err['ten_loai'] = "bạn nhập tên chùng";
             }
             if (!$err) {
                 $m_loai = new m_loai();

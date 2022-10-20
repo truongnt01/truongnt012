@@ -4,6 +4,7 @@ class c_san_pham_ct{
         include ("models/m_san_pham_ct.php");
         $m_san_pham_ct = new m_san_pham_ct();
         $san_pham_cts = $m_san_pham_ct->doc_san_pham_ct();
+        $add_sp_cung_loai = $m_san_pham_ct->load_sp_cung_loai();
         include ("models/m_binh_luan.php");
         $m_binh_luan = new m_binh_luan();
         $binh_luans = $m_binh_luan->doc_binh_luan();

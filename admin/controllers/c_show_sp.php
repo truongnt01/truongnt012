@@ -57,6 +57,7 @@ class c_show_sp{
     if ($don_gia == '') {
         $err['don_gia'] = "bạn chưa nhập giá";
     }
+   
     if ($ten_hh == '') {
         $err['ten_hh'] = "bạn chưa nhập tên";
     }
@@ -112,6 +113,7 @@ class c_show_sp{
     if ($don_gia == '') {
         $err['don_gia'] = "bạn chưa nhập giá";
     }
+    
     if ($ten_hh == '') {
         $err['ten_hh'] = "bạn chưa nhập tên";
     }
