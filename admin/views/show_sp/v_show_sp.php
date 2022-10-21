@@ -29,6 +29,35 @@
     </div>
 
   </div>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <div id="myChart" style="width:100%; max-width:100%; height:500px;"></div>
+  <?php
+    $sum = count($show_users) + count($show_lh) + count($show_sps) + count($show_bl);
+  ?>
+  <script>
+    google.charts.load('current', {
+      'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['User', 'Tổng <?= $sum ?> '],
+        ['Users', <?= count($show_users) ?>],
+        ['Categories', <?= count($show_lh) ?>],
+        ['Product', <?= count($show_sps) ?>],
+        ['Comments', <?= count($show_bl) ?>],
+      ]);
+
+      var options = {
+        title: 'Thống kê'
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('myChart'));
+      chart.draw(data, options);
+    }
+  </script>
  
       <div class="noidung">
         <table border="1px">

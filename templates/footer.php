@@ -47,3 +47,32 @@
         </div>
 
     </footer>
+    <script>
+        
+        console.log(img);
+        var arrImg = [
+            "public/images/mau-banner-quang-cao-khuyen-mai.jpg",
+            "public/images/Banner2.jpg",
+            "public/images/banner3.jpeg",
+            "public/images/banner4.jpg",
+            "public/images/banner1.jpg"
+        ]
+        var img = document.querySelector('.banner');
+        var interval = null;
+        var index = 0;
+
+        function showImg(){
+            if(index >= arrImg.length){
+                index = 0;
+            }
+            img.src = arrImg[index];
+            index++;
+        }
+        function startImg(){
+            var second = 2000;
+            if(interval == null){
+                interval = setInterval(showImg, second);
+            }
+        }
+        startImg();
+    </script>

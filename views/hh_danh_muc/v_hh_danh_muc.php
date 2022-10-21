@@ -20,7 +20,7 @@
             <div class="sanpham">
             <?php foreach( $hh_danh_mucs as $key=>$value ) {?>
         
-              <a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>">  <div class="sanphamct">
+              <a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai?>">  <div class="sanphamct">
                     <img src="public/images/<?php echo $value->hinh;?>" alt="" class="anhsanpham">
                     <div class="tensp"><a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai?>"><?php echo $value->ten_hh;?></a></div>
                     <div class="giatien">₫<?php echo number_format($value->don_gia)?></div> 
