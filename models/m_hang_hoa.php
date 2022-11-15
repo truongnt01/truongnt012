@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 require_once ("database.php");
 class m_hang_hoa extends database{
      public function doc_hang_hoa(){  
