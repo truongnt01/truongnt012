@@ -2,7 +2,7 @@
   if (isset($_SESSION['users'])) {
   $data_user = json_decode(json_encode($_SESSION['users']),true);
   if($data_user[0]['vai_tro'] == '0'){
-    header('location:../../../daall/index.php');
+    header('location:../../../du_an_1/index.php');
     exit;
   }
 }
@@ -14,20 +14,20 @@
     <div class="sidebar-menu">
       <ul>
         <li>
-          <a href="showsp.php"   ><i class="fa-brands fa-codepen"></i>Sản Phẩm </a>
+          <a href="dashboad.php"   ><i class="fa-brands fa-codepen"></i>Sản Phẩm </a>
         </li>
         <li>
-          <a href="showloai.php" class="tagA"><i class="fa-solid fa-sitemap"></i>Loại</a>
+          <a href="?act=show-loai" class="tagA"><i class="fa-solid fa-sitemap"></i>Loại</a>
         </li>
         <li>
-          <a href="showbl.php" class="tagA"><i class="fa-solid fa-clipboard"></i>Bình Luận</a>
+          <a href="?act=show-comments" class="tagA"><i class="fa-solid fa-clipboard"></i>Bình Luận</a>
         </li>
 
         <li>
-          <a href="showkh.php" class="tagA"><i class="fa-solid fa-users"></i>Khách Hàng</a>
+          <a href="?act=show-users" class="tagA"><i class="fa-solid fa-users"></i>Khách Hàng</a>
         </li>
         <li>
-          <a href="../../../daall/index.php" class="tagA"><i class="fa-solid fa-house"></i>Vào Website</a>
+          <a href="../../../du_an_1/index.php" class="tagA"><i class="fa-solid fa-house"></i>Vào Website</a>
         </li>
      
       </ul>

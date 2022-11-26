@@ -66,12 +66,12 @@ class c_show_sp{
     }
     
     if (!$err) {
-        move_uploaded_file($file['tmp_name'], '../../daall/public/images/' . $image);
+        move_uploaded_file($file['tmp_name'], '../../du_an_1/public/images/' . $image);
         $m_show_sp = new m_show_sp();
         $result = $m_show_sp->up_sp($id_hh,$ten_hh,
         $don_gia,$giam_gia,$image,$id_loai,$dac_biet,$da_ban,$ngay_nhap,$mo_ta);
         $msg = "thêm sp thành công ";
-        header("location:showsp.php?msg=$msg");
+        header("location:dashboad.php?msg=$msg");
         exit;
     }
 }
@@ -123,10 +123,10 @@ class c_show_sp{
         $result = $m_show_sp->edit_sp($id_hh,$ten_hh,
         $don_gia,$giam_gia,$image,$id_loai,$dac_biet,$da_ban,$ngay_nhap,$mo_ta);
         if ($file['size']>0) {
-            move_uploaded_file($file['tmp_name'], '../../daall/public/images/' . $image);
+            move_uploaded_file($file['tmp_name'], '../../du_an_1/public/images/' . $image);
         }
         $msg = "thêm sp thành công ";
-        header("location:showsp.php?msg=$msg");
+        header("location:dashboad.php?msg=$msg");
         exit;
     }
 }
@@ -140,8 +140,8 @@ class c_show_sp{
         $id_hh = $_GET['id_hh'];
         $m_show_sp = new m_show_sp();
         $xoa_sp = $m_show_sp->xoa_sp();
-        $msg = "thêm sp thành công ";
-        header("location:showsp.php?msg=$msg ");
+        $msg = "Xóa sp thành công ";
+        header("location:dashboad.php?msg=$msg ");
         exit;
     }
 } 

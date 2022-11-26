@@ -1,9 +1,7 @@
 <form action="" method="post" enctype="multipart/form-data">
     <div class="addbang">
-       
-            <input type="hidden" name="id_kh" placeholder="Auto number" value="<?= $result_id_kh->id_kh ?>">
 
-        
+        <input type="hidden" name="id_kh" placeholder="Auto number" value="<?= $result_id_kh->id_kh ?>">
         <div class="box"> <label for="">Tên khách hàng</label> <br>
             <input type="text" name="ho_ten" value="<?= $result_id_kh->ho_ten ?>">
             <?php if (isset($err['ho_ten'])) : ?>
@@ -31,8 +29,8 @@
             <?php endif  ?>
         </div>
         <div class="box">
-        <label for="">email </label> <br> <input type="email" name="email" value="<?= $result_id_kh->email ?>">
-        <?php if (isset($err['email'])) : ?>
+            <label for="">email </label> <br> <input type="email" name="email" value="<?= $result_id_kh->email ?>">
+            <?php if (isset($err['email'])) : ?>
                 <div style="color:red;padding-left: 50px;font-weight: 600;"><?= $err['email'] ?> </div>
             <?php endif  ?>
         </div>
@@ -43,7 +41,7 @@
         </div>
 
     </div>
- 
-    <button type="submit" name="btnluu">sửa user </button>
+
+    <button type="submit" name="btnluu">Sửa user </button>
 </form>
-<a href="showkh.php"> <button type="submit"> danh sách sp </button> </a>
+<a href="?act=show-users"> <button type="submit"> Danh sách Users </button> </a>

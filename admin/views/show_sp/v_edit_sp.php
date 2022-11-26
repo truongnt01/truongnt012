@@ -68,4 +68,4 @@
 
     <button type="submit" name="btnluu">sửa sp </button>
 </form>
-<a href="showsp.php"> <button type="submit"> danh sách sp </button> </a>
+<a href="dashboad.php"> <button type="submit"> danh sách sp </button> </a>

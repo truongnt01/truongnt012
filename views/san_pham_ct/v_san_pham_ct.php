@@ -109,14 +109,32 @@ if (isset($_SESSION['users'])) {
     <?php } ?>
     <?php if (isset($_SESSION['users'])) { ?>
         <div class="content_comment" style=" margin: 30px 0;">
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_kh" id="" value="<?= $data_user[0]['id_kh'] ?>">
                 <input type="hidden" name="id_hh" id="" value="<?= $_GET['id_hh'] ?>">
-                <textarea rows="5" style="width: 50%; font-size: 18px; outline: none; padding: 10px; resize: none;" placeholder="Enter your comments here..." name="noi_dung"></textarea>
+                <input type="file" name="img">
+                <?php if (isset($_SESSION['err_img'])) { ?>
+                    <span style="color: #D41830;"><?= $_SESSION['err_img'] ?></span>
+                <?php } ?>
+                <br>
+                <br>
+                <textarea rows="5" style="width: 50%; font-size: 18px; outline: none; padding: 10px; resize: none;" placeholder="Enter your comments here..." name="noi_dung"></textarea> <br> <br>
+                <?php if (isset($_SESSION['err_noidung'])) { ?>
+                    <span style="color:#D41830;"><?= $_SESSION['err_noidung'] ?></span>
+                <?php } ?>
                 <button type="submit" name='cmt' style="display: block; width: 120px; height: 40px; margin-top: 15px;background-color: #D41830; color: #fff; font-size: 18px; border: none;">Gửi</button>
             </form>
         </div>
-    <?php } ?>    
+    <?php } ?>
+    <?php
+    unset($_SESSION['err_img']);
+    unset($_SESSION['err_noidung']);
+    ?>
+    <?php if (!isset($_SESSION['users'])) { ?>
+        <div style="margin: 2rem; text-align: center; color: #D41830;">
+            <h2>Vui lòng đăng nhập để bình luận!</h2>
+        </div>
+    <?php } ?>
     <script>
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
@@ -128,13 +146,13 @@ if (isset($_SESSION['users'])) {
 </div>
 <div class="sanpham" style="width: 60%;padding:3% 20%; padding-right: 20%; background: #FAFAFA;">
     <?php foreach ($add_sp_cung_loai as $key => $value) { ?>
-        <a href="sanphamct.php?id_hh=<?php echo $value->id_hh;?>&id_loai=<?php echo $value->id_loai?>">
+        <a href="?act=chi-tiet-sp&id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">
             <div class="sanphamct">
                 <img src="public/images/<?php echo $value->hinh; ?>" alt="" class="anhsanpham">
-                <div class="tensp"><a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai?>"><?php echo $value->ten_hh; ?></a></div>
+                <div class="tensp"><a href="?act=chi-tiet-sp&id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>"><?php echo $value->ten_hh; ?></a></div>
                 <div class="giatien">₫<?php echo number_format($value->don_gia) ?></div>
                 <div class="luotxem"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> Đã bán <?php echo $value->da_ban; ?>k</div>
-                <div class="chitietsp"><a href="sanphamct.php?id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai?>">Xem chi tiết</a></div>
+                <div class="chitietsp"><a href="?act=chi-tiet-sp&id_hh=<?php echo $value->id_hh; ?>&id_loai=<?php echo $value->id_loai ?>">Xem chi tiết</a></div>
             </div>
         </a>
     <?php } ?>

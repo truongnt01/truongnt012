@@ -1,6 +1,6 @@
 <?php
-include ("models/m_show_sp.php");
-include ("models/m_loai.php");
+include("models/m_show_sp.php");
+include("models/m_loai.php");
 class c_loai
 {
     public function index()
@@ -16,18 +16,18 @@ class c_loai
         if (isset($_POST['btnluu'])) {
             $id_loai = NULL;
             $ten_loai = $_POST['ten_loai'];
-           
-            if ($ten_loai == '' ) {
+
+            if ($ten_loai == '') {
                 $err['ten_loai'] = "bạn chưa nhập tên";
             }
-            if ($ten_loai = 'ten_loai' ) {
-                $err['ten_loai'] = "bạn nhập tên chùng";
-            }
+            // if ($ten_loai = 'ten_loai') {
+            //     $err['ten_loai'] = "bạn nhập tên trùng";
+            // }
             if (!$err) {
                 $m_loai = new m_loai();
                 $result = $m_loai->add_loai($id_loai, $ten_loai);
-                $msg = "thêm sp thành công ";
-                header("location:showloai.php?msg=$msg ");
+                $msg = "thêm loại thành công ";
+                header("location:?act=show-loai&msg=$msg");
                 exit;
             }
         }
@@ -36,7 +36,7 @@ class c_loai
     }
     public function edit_loaih()
     {
-        $id_loai =$_GET['id_loai'];
+        $id_loai = $_GET['id_loai'];
         $m_loai = new m_loai();
         $result_id_loai = $m_loai->read_id_loai($id_loai);
         $err = [];
@@ -44,13 +44,13 @@ class c_loai
             $id_loai = $_POST['id_loai'];
             $ten_loai = $_POST['ten_loai'];
             $m_loai = new m_loai();
-            $result = $m_loai->edit_loai( $id_loai, $ten_loai);
+            $result = $m_loai->edit_loai($id_loai, $ten_loai);
             if ($ten_loai == '') {
                 $err['ten_loai'] = "bạn chưa nhập tên";
             }
             if (!$err) {
-                $msg = "thêm sp thành công ";
-                header("location:showloai.php?msg=$msg ");
+                $msg = "Sửa thành công ";
+                header("location:?act=show-loai&msg=$msg ");
                 exit;
             }
         }
@@ -62,8 +62,8 @@ class c_loai
         $id_loai = $_GET['id_loai'];
         $m_loai = new m_loai();
         $xoa_loais = $m_loai->xoa_loai();
-        $msg = "thêm sp thành công ";
-        header("location:showloai.php?msg=$msg ");
+        $msg = "Xóa thành công ";
+        header("location:?act=show-loai&msg=$msg ");
         exit;
     }
 }

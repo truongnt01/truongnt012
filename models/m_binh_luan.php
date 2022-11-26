@@ -10,10 +10,10 @@ class m_binh_luan extends database
           // lấy dữ liệu nhiều dùng 
           return $this->loadAllRows();
      }
-     public function insert_binh_luan($id_kh,$id_hh,$noi_dung){
-          $sql = "Insert into binh_luan(id_kh,id_hh,noi_dung) Values(?,?,?)";
+     public function insert_binh_luan($id_kh,$id_hh,$noi_dung,$anhbl){
+          $sql = "Insert into binh_luan(id_kh,id_hh,noi_dung,anhbl) Values(?,?,?,?)";
           $this->setQuery($sql);
-          return $this->execute(array($id_kh,$id_hh,$noi_dung));
+          return $this->execute(array($id_kh,$id_hh,$noi_dung,$anhbl));
      }
  
 }

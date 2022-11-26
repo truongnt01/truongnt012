@@ -14,9 +14,9 @@ class c_user
         $data_user = json_decode(json_encode($_SESSION['users']), true);
         //phân quyền user vs admin
         if ($data_user[0]['vai_tro'] == '1') {
-          header('location:showsp.php');
+          header('location:dashboad.php');
         } else {
-          header("location:../../daall/index.php?Login thành công!");
+          header("location:../../du_an_1/index.php?Login thành công!");
         }
       } else {
         $_SESSION['error_login'] = "Sai thông tin đăng nhập";
@@ -29,7 +29,7 @@ class c_user
   {
     unset($_SESSION['users']);
     unset($_SESSION['error_login']);
-    header("location:../../daall/index.php?Logout thành công!");
+    header("location:../../du_an_1/index.php?Logout thành công!");
   }
   public function saveLoginSession($username, $password)
   {

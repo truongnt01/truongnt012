@@ -1,5 +1,5 @@
 <main>
-<div class="cards" style="margin-bottom: 25px;">
+  <div class="cards" style="margin-bottom: 25px;">
     <div class="card-single">
       <div>
         <h1><?= count($show_users) ?></h1>
@@ -33,7 +33,7 @@
 
   <div id="myChart" style="width:100%; max-width:100%; height:500px;"></div>
   <?php
-    $sum = count($show_users) + count($show_lh) + count($show_sps) + count($show_bl);
+  $sum = count($show_users) + count($show_lh) + count($show_sps) + count($show_bl);
   ?>
   <script>
     google.charts.load('current', {
@@ -51,56 +51,56 @@
       ]);
 
       var options = {
-        title: 'Thống kê'
+        title: 'Thống kê',
+        colors: ['#e0440e', ]
       };
 
       var chart = new google.visualization.BarChart(document.getElementById('myChart'));
       chart.draw(data, options);
     }
   </script>
- 
-      <div class="noidung">
-        <table border="1px">
-          <tr>
-        
-            <th>Mã hh</th>
-            <th>Tên hàng hóa</th>
-            <th>Giá bán</th>
-            <th>Giá gốc</th>
-            <th>Ảnh hàng hóa</th>
-            <th>Id loại</th>
-            <th>Đặc biệt</th>
-            <th>Đã bán</th>
-            <th>Ngày nhập</th>
-            <th>Mô tả </th>
-            <th>Chỉnh sửa</th>
 
-          </tr>
-          <?php foreach($show_sps as $key=> $value){ ?>
-          <tr>
-           
-            <td><?php echo $value->id_hh ?></td>
-            <td><?php echo $value->ten_hh ?></td>
-            <td><?php echo $value->don_gia ?> </td>
-            <td><?php echo $value->giam_gia ?></td>
-            <td><img src="../../../daall/public/images/<?php echo $value->hinh ?>" alt="" width="100px"></td>
+  <div class="noidung">
+    <table border="1px">
+      <tr>
 
-            <td><?php echo $value->id_loai ?></td>
-            <td><?php echo $value->dac_biet ?></td>
-            <td><?php echo $value->da_ban ?></td>
+        <th>Mã hh</th>
+        <th>Tên hàng hóa</th>
+        <th>Giá bán</th>
+        <th>Giá gốc</th>
+        <th>Ảnh hàng hóa</th>
+        <th>Id loại</th>
+        <th>Đặc biệt</th>
+        <th>Đã bán</th>
+        <th>Ngày nhập</th>
+        <th>Mô tả </th>
+        <th>Chỉnh sửa</th>
 
-            <td><?php echo $value->ngay_nhap ?></td>
-            <td><?php echo $value->mo_ta ?></td>
-            <td>
-              <a class="sx" href="editsp.php?id_hh=<?php echo $value->id_hh ?>">Sửa</a>
-              <a class="sx" onclick="return confirm('Bạn có muốn xóa ko')" href="xoasp.php?id_hh=<?php echo $value->id_hh ?>">xóa</a>
-            </td>
-          </tr>
-          <?php } ?>
+      </tr>
+      <?php foreach ($show_sps as $key => $value) { ?>
+        <tr>
 
-        </table>
-        <a href="addsp.php"> <button type="submit">Thêm sp </button></a>
-      </div>
-     
-    </main>
-    
+          <td><?php echo $value->id_hh ?></td>
+          <td><?php echo $value->ten_hh ?></td>
+          <td><?php echo $value->don_gia ?> </td>
+          <td><?php echo $value->giam_gia ?></td>
+          <td><img src="../../../du_an_1/public/images/<?php echo $value->hinh ?>" alt="" width="100px"></td>
+
+          <td><?php echo $value->id_loai ?></td>
+          <td><?php echo $value->dac_biet ?></td>
+          <td><?php echo $value->da_ban ?></td>
+
+          <td><?php echo $value->ngay_nhap ?></td>
+          <td><?php echo $value->mo_ta ?></td>
+          <td>
+            <a class="sx" href="?act=edit-product&id_hh=<?php echo $value->id_hh ?>">Sửa</a>
+            <a class="sx" onclick="return confirm('Bạn có muốn xóa ko')" href="?act=delete-product&id_hh=<?php echo $value->id_hh ?>">xóa</a>
+          </td>
+        </tr>
+      <?php } ?>
+
+    </table>
+    <a href="?act=add-product"> <button type="submit">Thêm sp </button></a>
+  </div>
+
+</main>

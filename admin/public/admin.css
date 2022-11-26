@@ -8,7 +8,6 @@
 }
 
 :root {
- 
   --main-color: lightslategray;
   --color-dark: #1d2231;
   --text-gray: #8390a2;
@@ -62,7 +61,6 @@
   background: #fff;
 
   color: var(--main-color);
-
 }
 
 .main-content {
@@ -75,7 +73,7 @@ header {
   padding: 1rem;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
 }
-.log-out-btn a{
+.log-out-btn a {
   background-color: #006400;
   display: block;
   padding: 5px 10px;
@@ -100,7 +98,6 @@ header {
   outline: none;
   font-size: 20px;
   transition: all 0.5s;
-
 }
 
 .search-wrapper input:focus {
@@ -151,26 +148,21 @@ header {
   margin-right: 0.5rem;
 }
 
-
 /* css bảng */
- 
+
 .noidung table {
   border: 1px solid #1d2231;
   width: 100%;
   border-collapse: collapse;
-
 }
 
 .noidung table tr th {
-
   background: cadetblue;
   height: 40px;
 }
 
 .noidung table tr td {
-
   text-align: justify;
-
 }
 
 button {
@@ -180,27 +172,23 @@ button {
 }
 table tr :nth-child(10) {
   width: 400px;
-  
 }
- 
-table tr td{
- padding: 10px;
- 
- /* -webkit-box-orient: vertical;
+
+table tr td {
+  padding: 10px;
+
+  /* -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   height: 80px; */
-  
 }
-table tr th{
+table tr th {
   padding: 10px;
   text-align: center;
   /* -webkit-box-orient: vertical;
    -webkit-line-clamp: 4;
    height: 80px; */
-   
- }
- 
- 
+}
+
 table tr :nth-child(5) {
   width: 150px;
 }
@@ -224,7 +212,6 @@ form {
   width: 100%;
   display: flex;
   justify-content: left;
-
 }
 
 .box {
@@ -247,29 +234,27 @@ input {
   margin: 10px 50px;
 
   padding: 10px 12px;
-   
 }
 
 button {
   padding: 10px 20px;
   margin: 40px 50px;
   float: left;
-  background:cadetblue ;
+  background: cadetblue;
   color: #fff;
 }
 
 a {
   text-decoration: none;
 }
-.sx{
+.sx {
   float: left;
   width: 50px;
   border: 1px solid #1d2231;
   background: cadetblue;
   padding: 5px 10px;
- margin-top: 10px;
- color: #fff;
- text-align: center;
- margin-left: 10px;
+  margin-top: 10px;
+  color: #fff;
+  text-align: center;
+  margin-left: 10px;
 }
- 

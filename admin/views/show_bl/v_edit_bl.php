@@ -13,5 +13,5 @@
     </div>
         <button type="submit" name="btnluu">sửa</button>
 </form>
-<a href="showbl.php"> <button type="submit"> danh sách sp </button> </a>
+<a href="?act=show-comments"> <button type="submit">Danh sách bình luận </button> </a>
  

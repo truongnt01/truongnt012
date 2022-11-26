@@ -54,6 +54,7 @@
           </div>
         </div>
       </form>
+      <?php unset($_SESSION['error_login'])?>
     </div>
   </main>
 </body>

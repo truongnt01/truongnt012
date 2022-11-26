@@ -16,12 +16,19 @@ class c_khach_hang
     }
     public function xoa_kh()
     {
+        $data_user = json_decode(json_encode($_SESSION['users']), true);
         $id_kh = $_GET['id_kh'];
-        $m_khach_hang = new m_khach_hang();
-        $xoa_kh = $m_khach_hang->xoa_kh();
-        $msg = "xóa kh thành công ";
-        header("location:showkh.php?msg=$msg ");
-        exit;
+        if ($id_kh == $data_user[0]['id_kh']) {
+            $msg = 'Không thể tự xóa chính mình!';
+            header("location:?act=show-users&msg=$msg");
+            exit;
+        } else {
+            $m_khach_hang = new m_khach_hang();
+            $xoa_kh = $m_khach_hang->xoa_kh();
+            $msg = "Xóa khách hàng thành công ";
+            header("location:?act=show-users&msg=$msg");
+            exit;
+        }
     }
     public function edit_kh()
     {
@@ -63,15 +70,16 @@ class c_khach_hang
                     $mat_khau,
                     $email,
                     $kich_hoat,
-                    $vai_tro 
+                    $vai_tro
                 );
-                 
-                $msg = "sửa user thành công ";
-                header("location:showkh.php?msg=$msg");
+
+                $msg = "Sửa khách hàng thành công ";
+                header("location:?act=show-users&msg=$msg");
                 exit;
             }
         }
         $view = "views/show_kh/v_edit_kh.php";
         include("templates/layout.php");
+        // print_r($data_user);
     }
 }

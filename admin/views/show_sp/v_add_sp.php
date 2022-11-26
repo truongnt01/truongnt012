@@ -65,7 +65,7 @@
 
     <button type="submit" name="btnluu">Thêm mới </button>
 </form>
-<a href="showsp.php"> <button type="submit"> danh sách sp </button> </a>
+<a href="dashboad.php"> <button type="submit"> danh sách sp </button> </a>
 <!-- <input type="text" name="id_loai">
         <div class="box"><label for="">id loại </label> <br>
             <select name="id_loai" style="border:1px solid #000 ; width: 250px; height: 45px; margin-left: 50px;">
