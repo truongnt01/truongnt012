@@ -1,4 +1,5 @@
 <?php 
+session_start();
 class c_san_pham{
     public function index(){
         include ("models/m_san_pham.php");

@@ -29,7 +29,9 @@
         <li>
           <a href="../../../du_an_1/index.php" class="tagA"><i class="fa-solid fa-house"></i>Vào Website</a>
         </li>
-     
+        <li>
+          <a href="?act=cart" class="tagA"><i class="fa-solid fa-cart-shopping"></i>Đơn Hàng</a>
+        </li>
       </ul>
     </div>
   </div>

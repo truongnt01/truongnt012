@@ -3,6 +3,7 @@
 if (isset($_SESSION['users'])) {
     $data_user = json_decode(json_encode($_SESSION['users']), true);
 }
+
 ?>
 <?php foreach ($san_pham_cts as $key => $value) { ?>
     <div class="trangctsp">
@@ -25,11 +26,13 @@ if (isset($_SESSION['users'])) {
                 </div>
                 <div class="sodanhgiact"> 2 Đánh Giá</div>
                 <div class="soluotban">9 Đã Bán</div>
-
+                
             </div>
+            
+            <form action="?act=cart" method="post">
             <div class="giatienct">
-                <div class="giagocct">Giá ban đầu:<?php echo ($value->giam_gia + $value->don_gia) ?>$</div>
-                <div class="giabanct">Giá: <strong id="money"><?php echo number_format ($value->don_gia) ?></strong>$</div>
+                <div class="giagocct">Giá ban đầu:<?php echo number_format($value->giam_gia + $value->don_gia) ?>đ</div>
+                <div class="giabanct">Giá: <strong><?php echo number_format ($value->don_gia) ?></strong>đ</div>
             </div>
             <div class="baohiemct">
                 <div class="baohien1">Bảo Hiểm</div>
@@ -51,13 +54,12 @@ if (isset($_SESSION['users'])) {
                     <input style="text-align: center;" type="number" id="<?= $value->id_hh ?>" value="1" name="quantity" min="1" max="100" readonly />
                     <span onclick="mathPrice(<?= $value->don_gia ?>,'plus',<?= $value->id_hh ?>,'money')" style=" cursor:pointer;border:1px solid ;padding:0 5px;">+</span>
                 </div>
-            </div>
+            </div>                                                                                          
 
             <div class="muact" style="text-align: center;">
-                <form action="?act=cart" method="post">
-                    <input type="hidden" value="<?= $value->ten_hh ?>" name="name">
-                    <input type="hidden" value="<?= $value->don_gia ?>" name="gia">
-                    <input type="hidden" value="<?= $value->hinh ?>" name="img">
+               
+
+                    <input type="hidden" value="<?= $value->don_gia ?>" name="price">
                     <input type="hidden" value="<?= $value->id_hh ?>" name="id">
                     <button type="submit" name="btn">
                         <a href="?act=cart">
