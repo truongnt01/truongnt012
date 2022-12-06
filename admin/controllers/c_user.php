@@ -27,6 +27,7 @@ class c_user
 
   public function logout()
   {
+    unset($_SESSION['cart']);
     unset($_SESSION['users']);
     unset($_SESSION['error_login']);
     header("location:../../du_an_1/index.php?Logout thành công!");
@@ -39,7 +40,7 @@ class c_user
       $_SESSION['users'] = $user;
     }
   }
-  
+
   public function checkRegister()
   {
     if (isset($_POST['create'])) {

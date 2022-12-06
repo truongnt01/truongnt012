@@ -2,23 +2,22 @@
 
 if (isset($_SESSION['users'])) {
     $data_user = json_decode(json_encode($_SESSION['users']), true);
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
+    if (isset($_POST['quantity'])) {
+        $quantity = $_POST['quantity'];
+        $id = $_POST['id'];
+        $price = $_POST['price'];
+
+        if (isset($_SESSION['cart']['' . $id . ''])) {
+            $_SESSION['cart']['' . $id . ''] += $quantity;
+        } else {
+            $_SESSION['cart']['' . $id . ''] = $quantity;
+        }
+    }
 } else {
     header('location:admin/login.php');
-}
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = array();
-}
-if (isset($_POST['quantity'])) {
-    $quantity = $_POST['quantity'];
-    $id = $_POST['id'];
-    $price = $_POST['price'];
-    
-    if (isset($_SESSION['cart']['' . $id . ''])) {
-        $_SESSION['cart']['' . $id . ''] += $quantity;
-        
-    } else {
-        $_SESSION['cart']['' . $id . ''] = $quantity;
-    }
 }
 
 ?>
@@ -39,7 +38,7 @@ if (isset($_POST['quantity'])) {
                 </thead>
 
                 <tbody>
-                    <?php foreach ($hang_hoas    as $x => $y) : ?>
+                    <?php foreach ($hang_hoas as $x => $y) : ?>
                         <?php foreach ($_SESSION['cart'] as $key => $value) {
                             if ($y->id_hh == $key) { ?>
                                 <tr>
@@ -60,7 +59,7 @@ if (isset($_POST['quantity'])) {
         </section>
         <section>
             <div class="order">
-               <form action="?act=order" method="POST">
+                <form action="?act=order" method="POST">
                     <input type="hidden">
                     <h1><?php echo count($_SESSION['cart']) ?> Món</h1>
                     <hr>
@@ -68,12 +67,13 @@ if (isset($_POST['quantity'])) {
                         <?php if (isset($total)) {
                             echo number_format($total);
                         }  ?>đ
-                    </p>    
-                    <input type="hidden" value="<?=$total?>" name="total">
+                    </p>
+                    <input type="hidden" value="<?= $total ?>" name="total">
                     <hr>
-                    <a href=""><button type="submit">Thanh toán cho sản phẩm</button></a>
-               </form>
+                    <a href=""><button style="cursor: pointer;"  type="submit">Thanh toán cho sản phẩm(trả tiền trực tiếp)</button></a>
 
+                </form>
+                <a href="./vnpay_php"><button style="cursor: pointer;" type="submit">Thanh toán cho sản phẩm(bằng thẻ ngân hàng)</button></a>
             </div>
         </section>
     </div>
